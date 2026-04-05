@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AtletAI</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0e0e0f; color: #e8e6e9; font-family: 'Manrope', -apple-system, sans-serif; }
+  @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800;900&family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@400;700&display=swap');
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .logo { display: flex; align-items: center; gap: 8px; }
+  .logo-icon { width: 32px; height: 32px; background: #cafd00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .logo-text { font-family: 'Lexend', sans-serif; font-weight: 800; font-size: 20px; color: #cafd00; letter-spacing: -0.5px; }
+  .nav-badge { background: rgba(202,253,0,0.15); color: #cafd00; font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(202,253,0,0.3); }
+
+  .hero { text-align: center; padding: 80px 40px 60px; max-width: 800px; margin: 0 auto; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(129,236,255,0.1); border: 1px solid rgba(129,236,255,0.2); color: #81ecff; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; }
+  .hero-title { font-family: 'Lexend', sans-serif; font-weight: 900; font-size: 56px; line-height: 1.05; letter-spacing: -2px; margin-bottom: 20px; }
+  .hero-title span { color: #cafd00; }
+  .hero-sub { font-size: 18px; color: #adaaab; line-height: 1.7; margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto; }
+  .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: #cafd00; color: #1a2600; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 30px; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .btn-secondary { background: transparent; color: #e8e6e9; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .btn-disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .phone-mockup { margin: 60px auto; max-width: 280px; background: #1a191b; border-radius: 40px; padding: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 40px 80px rgba(0,0,0,0.5); }
+  .phone-screen { background: #0e0e0f; border-radius: 30px; overflow: hidden; }
+  .phone-header { background: #0e0e0f; padding: 16px 16px 10px; display: flex; justify-content: space-between; align-items: center; }
+  .phone-logo { font-family: 'Lexend', sans-serif; font-weight: 800; font-size: 15px; color: #cafd00; }
+  .phone-gear { width: 28px; height: 28px; background: #1a191b; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+  .phone-chat { padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .bubble-ai { background: #1a191b; border-radius: 14px 14px 14px 4px; padding: 10px 12px; font-size: 11px; color: #e8e6e9; max-width: 85%; border-left: 2px solid rgba(129,236,255,0.4); }
+  .bubble-user { background: #ff734a; border-radius: 14px 14px 4px 14px; padding: 10px 12px; font-size: 11px; color: #fff; max-width: 85%; align-self: flex-end; }
+  .gemini-label { font-family: 'Space Grotesk', sans-serif; font-size: 7px; color: #81ecff; letter-spacing: 1.5px; margin-top: 4px; }
+  .phone-input { margin: 8px 12px 12px; background: #1a191b; border-radius: 20px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; }
+  .phone-input-text { font-size: 10px; color: #adaaab; }
+  .phone-send { width: 24px; height: 24px; background: #cafd00; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #1a2600; font-weight: 700; }
+  .phone-tabs { display: flex; margin: 0 12px 12px; background: #262627; border-radius: 20px; padding: 4px; gap: 2px; }
+  .phone-tab { flex: 1; text-align: center; padding: 5px 2px; border-radius: 16px; font-family: 'Space Grotesk', sans-serif; font-size: 6px; font-weight: 700; letter-spacing: 0.5px; color: #adaaab; }
+  .phone-tab.active { background: #cafd00; color: #1a2600; }
+
+  .features { padding: 60px 40px; max-width: 900px; margin: 0 auto; }
+  .section-label { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; color: #adaaab; letter-spacing: 2px; text-align: center; margin-bottom: 16px; }
+  .section-title { font-family: 'Lexend', sans-serif; font-weight: 800; font-size: 36px; text-align: center; letter-spacing: -1px; margin-bottom: 48px; }
+  .section-title span { color: #cafd00; }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .feature-card { background: #1a191b; border-radius: 20px; padding: 24px; border: 1px solid rgba(255,255,255,0.06); }
+  .feature-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
+  .feature-title { font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+  .feature-desc { font-size: 13px; color: #adaaab; line-height: 1.6; }
+
+  .download { padding: 80px 40px; text-align: center; }
+  .download-title { font-family: 'Lexend', sans-serif; font-weight: 900; font-size: 42px; letter-spacing: -1.5px; margin-bottom: 16px; }
+  .download-title span { color: #cafd00; }
+  .download-sub { font-size: 16px; color: #adaaab; margin-bottom: 40px; }
+  .download-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .download-card { background: #1a191b; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px 28px; display: flex; align-items: center; gap: 14px; cursor: pointer; min-width: 180px; }
+  .download-card.android { border-color: rgba(202,253,0,0.3); }
+  .download-card.ios-soon { opacity: 0.5; }
+  .dc-icon { font-size: 28px; }
+  .dc-info { text-align: left; }
+  .dc-label { font-family: 'Space Grotesk', sans-serif; font-size: 9px; color: #adaaab; letter-spacing: 1px; }
+  .dc-platform { font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 15px; }
+  .dc-soon { font-family: 'Space Grotesk', sans-serif; font-size: 9px; color: #ff734a; letter-spacing: 1px; }
+
+  footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 40px; text-align: center; }
+  .footer-text { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #adaaab; letter-spacing: 0.5px; }
+  .footer-text span { color: #cafd00; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-icon">⚡</div>
+    <span class="logo-text">AtletAI</span>
+  </div>
+  <span class="nav-badge">BETA</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">✦ POWERED BY GEMINI 3.1 PRO</div>
+  <h1 class="hero-title">Il tuo coach<br><span>alimentato da AI</span></h1>
+  <p class="hero-sub">Dì a voce il tuo allenamento, AtletAI lo capisce, lo registra e ti consiglia come migliorare. Zero sbattimento.</p>
+  <div class="hero-buttons">
+    <a href="#download" class="btn-primary">⬇ Scarica ora · Android</a>
+    <a href="#features" class="btn-secondary">Scopri le funzioni</a>
+  </div>
+</section>
+
+<div class="phone-mockup">
+  <div class="phone-screen">
+    <div class="phone-header">
+      <span class="phone-logo">⚡ AtletAI</span>
+      <div class="phone-gear">⚙️</div>
+    </div>
+    <div class="phone-chat">
+      <div class="bubble-ai">
+        Ciao! Dimmi il tuo allenamento e lo registro automaticamente. 💪
+        <div class="gemini-label">✦ GEMINI PRO</div>
+      </div>
+      <div class="bubble-user">panca 3x8 80kg top set + 2x8 70kg back off</div>
+      <div class="bubble-ai">
+        Ho capito: Panca Piana — Top Set 3×8 @80kg + Back Off 2×8 @70kg (Piramidale Inverso). Salvo?
+        <div class="gemini-label">✦ GEMINI PRO</div>
+      </div>
+    </div>
+    <div class="phone-input">
+      <span class="phone-input-text">Scrivi il tuo allenamento...</span>
+      <div class="phone-send">→</div>
+    </div>
+    <div class="phone-tabs">
+      <div class="phone-tab active">CHAT</div>
+      <div class="phone-tab">SCHEDA</div>
+      <div class="phone-tab">STORICO</div>
+      <div class="phone-tab">STATS</div>
+      <div class="phone-tab">PROFILO</div>
+    </div>
+  </div>
+</div>
+
+<section class="features" id="features">
+  <p class="section-label">FUNZIONALITÀ</p>
+  <h2 class="section-title">Tutto quello che ti serve,<br><span>niente di più</span></h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(202,253,0,0.1);">💬</div>
+      <div class="feature-title">Chat naturale</div>
+      <div class="feature-desc">Scrivi o detta il tuo allenamento come parleresti con un amico. L'AI capisce tutto.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255,115,74,0.1);">📋</div>
+      <div class="feature-title">Scheda intelligente</div>
+      <div class="feature-desc">Crea la tua scheda in chat. L'app gestisce automaticamente la rotazione dei giorni.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(129,236,255,0.1);">📅</div>
+      <div class="feature-title">Storico con calendario</div>
+      <div class="feature-desc">Visualizza ogni allenamento nel calendario. Scheda, mix e richiami con colori diversi.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(202,253,0,0.1);">📈</div>
+      <div class="feature-title">Statistiche avanzate</div>
+      <div class="feature-desc">Grafici di progressione per ogni esercizio. Vedi i tuoi miglioramenti nel tempo.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(255,115,74,0.1);">🧠</div>
+      <div class="feature-title">Consigli personalizzati</div>
+      <div class="feature-desc">L'AI conosce il tuo profilo, le tue patologie e il tuo storico. I consigli sono su misura.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background: rgba(129,236,255,0.1);">👤</div>
+      <div class="feature-title">Multi-utente</div>
+      <div class="feature-desc">Ogni utente ha il suo profilo, i suoi dati e la sua scheda. Condividi con gli amici.</div>
+    </div>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <h2 class="download-title">Pronto ad allenarti<br><span>in modo più smart?</span></h2>
+  <p class="download-sub">Scarica AtletAI gratuitamente. iOS in arrivo.</p>
+  <div class="download-cards">
+    <div class="download-card android">
+      <span class="dc-icon">🤖</span>
+      <div class="dc-info">
+        <div class="dc-label">DISPONIBILE SU</div>
+        <div class="dc-platform">Android APK</div>
+      </div>
+    </div>
+    <div class="download-card ios-soon">
+      <span class="dc-icon">🍎</span>
+      <div class="dc-info">
+        <div class="dc-label">PROSSIMAMENTE</div>
+        <div class="dc-platform">iOS</div>
+        <div class="dc-soon">IN ARRIVO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-text">AtletAI · Powered by <span>Gemini 3.1 Pro</span> · Beta 1.0</p>
+</footer>
+
+</body>
+</html>
