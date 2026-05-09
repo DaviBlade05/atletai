@@ -23,8 +23,10 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .hero-title span { color: #cafd00; }
 .hero-sub { font-size: 18px; color: #adaaab; line-height: 1.7; margin-bottom: 40px; max-width: 540px; margin-left: auto; margin-right: auto; }
 .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
-.btn-primary { background: #cafd00; color: #1a2600; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 30px; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; }
-.btn-secondary { background: transparent; color: #e8e6e9; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.btn-primary { background: #cafd00; color: #1a2600; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 30px; border: none; cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; transition: transform 0.2s ease, opacity 0.2s ease; }
+.btn-primary:hover { transform: scale(1.05); opacity: 0.9; }
+.btn-secondary { background: transparent; color: #e8e6e9; font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 28px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); cursor: pointer; display: flex; align-items: center; gap: 8px; text-decoration: none; transition: background 0.2s ease, border-color 0.2s ease; }
+.btn-secondary:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
 .hero-stats { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
 .stat { text-align: center; }
 .stat-num { font-family: 'Lexend', sans-serif; font-weight: 800; font-size: 28px; color: #cafd00; }
@@ -59,6 +61,16 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .bar.active { background: #cafd00; }
 .chart-label { font-family: 'Space Grotesk', sans-serif; font-size: 7px; color: #adaaab; padding: 2px 10px 8px; }
 
+.cal-legend { display: flex; gap: 8px; padding: 6px 10px; font-size: 7px; font-family: 'Space Grotesk', sans-serif; }
+.cal-legend-lime { color: #cafd00; }
+.cal-legend-orange { color: #ff734a; }
+.cal-legend-blue { color: #81ecff; }
+
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding: 4px 8px 8px; }
+.stats-card { background: #1a191b; border-radius: 10px; padding: 8px; text-align: center; }
+.stats-val { font-family: 'Lexend', sans-serif; font-weight: 800; font-size: 14px; color: #cafd00; }
+.stats-lbl { font-family: 'Space Grotesk', sans-serif; font-size: 6px; color: #adaaab; letter-spacing: 1px; }
+
 .phone-caption { text-align: center; font-family: 'Space Grotesk', sans-serif; font-size: 10px; color: #adaaab; letter-spacing: 1px; margin-top: 12px; }
 
 .features { padding: 60px 40px; max-width: 960px; margin: 0 auto; }
@@ -88,7 +100,8 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 .download-title span { color: #cafd00; }
 .download-sub { font-size: 16px; color: #adaaab; margin-bottom: 40px; }
 .download-cards { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; }
-.download-card { background: #1a191b; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px 28px; display: flex; align-items: center; gap: 14px; cursor: pointer; min-width: 180px; }
+.download-card { background: #1a191b; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 20px 28px; display: flex; align-items: center; gap: 14px; cursor: pointer; min-width: 180px; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: inherit; }
+.download-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 .download-card.android { border-color: rgba(202,253,0,0.3); }
 .download-card.ios-soon { opacity: 0.5; }
 .dc-icon { font-size: 28px; }
@@ -102,7 +115,8 @@ footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 40px; displ
 .footer-text { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #adaaab; letter-spacing: 0.5px; }
 .footer-text span { color: #cafd00; }
 .footer-links { display: flex; gap: 20px; }
-.footer-link { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #adaaab; text-decoration: none; }
+.footer-link { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #adaaab; text-decoration: none; transition: color 0.2s ease; }
+.footer-link:hover { color: #cafd00; }
 </style>
 </head>
 <body>
@@ -123,7 +137,7 @@ footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 40px; displ
   <h1 class="hero-title">Allenarti non<br>dovrebbe essere<br><span>complicato</span></h1>
   <p class="hero-sub">Parla con AtletAI come faresti con un amico. Lui registra, analizza e ti consiglia. Tu ti alleni.</p>
   <div class="hero-buttons">
-    <a href="https://drive.google.com/uc?export=download&id=1YM_Hni3xOfqkiwDI5BbMNzvxc88Xaci6" class="btn-primary" target="_blank">⬇ Scarica · Android</a>
+    <a href="https://drive.google.com/uc?export=download&id=1YM_Hni3xOfqkiwDI5BbMNzvxc88Xaci6" class="btn-primary" target="_blank" rel="noopener noreferrer">⬇ Scarica · Android</a>
     <a href="#funzioni" class="btn-secondary">Scopri come funziona</a>
   </div>
   <div class="hero-stats">
@@ -202,10 +216,10 @@ footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 40px; displ
             <div class="cal-day lime">13</div>
             <div class="cal-day">14</div>
           </div>
-          <div style="display:flex;gap:8px;padding:6px 10px;font-size:7px;font-family:'Space Grotesk',sans-serif;">
-            <span style="color:#cafd00;">● Scheda</span>
-            <span style="color:#ff734a;">● Mix</span>
-            <span style="color:#81ecff;">● Richiamo</span>
+          <div class="cal-legend">
+            <span class="cal-legend-lime">● Scheda</span>
+            <span class="cal-legend-orange">● Mix</span>
+            <span class="cal-legend-blue">● Richiamo</span>
           </div>
         </div>
         <div class="phone-tabs">
@@ -239,14 +253,14 @@ footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 40px; displ
             <div class="bar active" style="height:90%"></div>
           </div>
           <div class="chart-label">+15kg in 7 settimane</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px 8px 8px;">
-            <div style="background:#1a191b;border-radius:10px;padding:8px;text-align:center;">
-              <div style="font-family:'Lexend',sans-serif;font-weight:800;font-size:14px;color:#cafd00;">90kg</div>
-              <div style="font-family:'Space Grotesk',sans-serif;font-size:6px;color:#adaaab;letter-spacing:1px;">MASSIMO</div>
+          <div class="stats-grid">
+            <div class="stats-card">
+              <div class="stats-val">90kg</div>
+              <div class="stats-lbl">MASSIMO</div>
             </div>
-            <div style="background:#1a191b;border-radius:10px;padding:8px;text-align:center;">
-              <div style="font-family:'Lexend',sans-serif;font-weight:800;font-size:14px;color:#cafd00;">+15kg</div>
-              <div style="font-family:'Space Grotesk',sans-serif;font-size:6px;color:#adaaab;letter-spacing:1px;">PROGRESSO</div>
+            <div class="stats-card">
+              <div class="stats-val">+15kg</div>
+              <div class="stats-lbl">PROGRESSO</div>
             </div>
           </div>
         </div>
@@ -271,7 +285,7 @@ footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 40px; displ
       <div class="feature-new">NUOVO v1.1</div>
       <div class="feature-icon" style="background:rgba(202,253,0,0.15);">🎙️</div>
       <div class="feature-title">Input vocale</div>
-      <div class="feature-desc">Ditta il tuo allenamento mentre ti alleni. AtletAI capisce e trascrive tutto automaticamente.</div>
+      <div class="feature-desc">Detta il tuo allenamento mentre ti alleni. AtletAI capisce e trascrive tutto automaticamente.</div>
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background:rgba(202,253,0,0.1);">💬</div>
@@ -331,7 +345,7 @@ footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 40px; displ
     <div class="step">
       <div class="step-num">2</div>
       <div class="step-content">
-        <div class="step-title">Ditta o scrivi il tuo allenamento</div>
+        <div class="step-title">Detta o scrivi il tuo allenamento</div>
         <div class="step-desc">In palestra scrivi o parla — "squat 4x6 100kg top set" — AtletAI capisce, struttura e chiede conferma prima di salvare.</div>
       </div>
     </div>
@@ -349,7 +363,7 @@ footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 24px 40px; displ
   <h2 class="download-title">Pronto a portare<br>l'AI <span>in palestra?</span></h2>
   <p class="download-sub">Gratuita, senza abbonamenti, senza pubblicità. Solo il tuo allenamento.</p>
   <div class="download-cards">
-    <a href="https://drive.google.com/uc?export=download&id=1YM_Hni3xOfqkiwDI5BbMNzvxc88Xaci6" class="download-card android" target="_blank">
+    <a href="https://drive.google.com/uc?export=download&id=1YM_Hni3xOfqkiwDI5BbMNzvxc88Xaci6" class="download-card android" target="_blank" rel="noopener noreferrer">
       <span class="dc-icon">🤖</span>
       <div class="dc-info">
         <div class="dc-label">SCARICA ORA</div>
