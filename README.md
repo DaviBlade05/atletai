@@ -4,11 +4,11 @@
 
 **Scrivi il tuo allenamento come lo racconteresti a un amico.**
 
-[![Ultima versione](https://img.shields.io/github/v/release/DaviBlade05/atletai?label=ultima%20versione&color=cafd00&style=for-the-badge)](https://github.com/DaviBlade05/atletai/releases/latest)
+[![Ultima versione](https://img.shields.io/github/v/release/davimarr5/atletai?label=ultima%20versione&color=cafd00&style=for-the-badge)](https://github.com/davimarr5/atletai/releases/latest)
 [![Android](https://img.shields.io/badge/Android-8.0%2B-cafd00?style=for-the-badge&logo=android&logoColor=black)](https://github.com/DaviBlade05/atletai/releases/latest)
 [![Gratis](https://img.shields.io/badge/gratis-senza%20pubblicit%C3%A0-cafd00?style=for-the-badge)](https://atletaii.netlify.app)
 
-[**Scarica l'APK**](https://github.com/DaviBlade05/atletai/releases/latest) · [Sito](https://atletaii.netlify.app) · [Privacy](https://atletaii.netlify.app/privacy.html) · [Novità](https://github.com/DaviBlade05/atletai/releases)
+[**Scarica l'APK**](https://github.com/davimarr5/atletai/releases/latest) · [Sito](https://atletaii.netlify.app) · [Privacy](https://atletaii.netlify.app/privacy.html) · [Novità](https://github.com/DaviBlade05/atletai/releases)
 
 </div>
 
@@ -47,7 +47,7 @@ E lei capisce, riconosce gli esercizi che usi di solito, e registra. Se la frase
 
 AtletAI **non è sul Play Store**: si installa direttamente dall'APK. Android chiederà una conferma in più — è normale per qualunque app distribuita fuori dallo store, e i passaggi sono questi:
 
-1. Scarica l'APK dall'[ultima release](https://github.com/DaviBlade05/atletai/releases/latest).
+1. Scarica l'APK dall'[ultima release](https://github.com/davimarr5/atletai/releases/latest).
 2. Apri il file. Android dirà che questa origine non è consentita: tocca **Impostazioni**.
 3. Attiva **Consenti da questa origine**, torna indietro e conferma l'installazione.
 4. Dalla prossima versione non serve più: l'app avvisa da sola quando esce un aggiornamento.
@@ -72,9 +72,9 @@ Aggiornamenti via **EAS Update**: le correzioni che non toccano il codice nativo
 
 ## Le versioni
 
-Ogni rilascio ha le sue note, scritte in italiano e per intero: **[github.com/DaviBlade05/atletai/releases](https://github.com/DaviBlade05/atletai/releases)**
+Ogni rilascio ha le sue note, scritte in italiano e per intero: **[github.com/DaviBlade05/atletai/releases](https://github.com/davimarr5/atletai/releases)**
 
-L'ultima è la **[1.8.0](https://github.com/DaviBlade05/atletai/releases/latest)**, e non contiene una sola funzione nuova. Una revisione del codice aveva trovato cinque strade per cui l'app poteva cancellare o perdere allenamenti *senza dirlo* — tutte raggiungibili parlando normalmente all'assistente o allenandosi in modo ordinario. Quella versione le chiude, e chiude anche la classe di difetti che le rendeva invisibili: il codice che dichiarava riuscito ciò che era fallito.
+L'ultima è la **[1.8.0](https://github.com/davimarr5/atletai/releases/latest)**, e non contiene una sola funzione nuova. Una revisione del codice aveva trovato cinque strade per cui l'app poteva cancellare o perdere allenamenti *senza dirlo* — tutte raggiungibili parlando normalmente all'assistente o allenandosi in modo ordinario. Quella versione le chiude, e chiude anche la classe di difetti che le rendeva invisibili: il codice che dichiarava riuscito ciò che era fallito.
 
 I test sono passati da 56 a 362.
 
@@ -96,6 +96,6 @@ Gli allenamenti sono tuoi e restano tuoi. Nessuna pubblicità, nessuna profilazi
 
 <div align="center">
 
-Fatto in Italia · [Segnala un problema](https://github.com/DaviBlade05/atletai/issues) · [davi.marr5@gmail.com](mailto:davi.marr5@gmail.com)
+Fatto in Italia · [Segnala un problema](https://github.com/davimarr5/atletai/issues) · [davi.marr5@gmail.com](mailto:davi.marr5@gmail.com)
 
 </div>
