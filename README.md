@@ -5,10 +5,10 @@
 **Scrivi il tuo allenamento come lo racconteresti a un amico.**
 
 [![Ultima versione](https://img.shields.io/github/v/release/davimarr5/atletai?label=ultima%20versione&color=cafd00&style=for-the-badge)](https://github.com/davimarr5/atletai/releases/latest)
-[![Android](https://img.shields.io/badge/Android-8.0%2B-cafd00?style=for-the-badge&logo=android&logoColor=black)](https://github.com/DaviBlade05/atletai/releases/latest)
+[![Android](https://img.shields.io/badge/Android-8.0%2B-cafd00?style=for-the-badge&logo=android&logoColor=black)](https://github.com/davimarr5/atletai/releases/latest)
 [![Gratis](https://img.shields.io/badge/gratis-senza%20pubblicit%C3%A0-cafd00?style=for-the-badge)](https://atletaii.netlify.app)
 
-[**Scarica l'APK**](https://github.com/davimarr5/atletai/releases/latest) · [Sito](https://atletaii.netlify.app) · [Privacy](https://atletaii.netlify.app/privacy.html) · [Novità](https://github.com/DaviBlade05/atletai/releases)
+[**Scarica l'APK**](https://github.com/davimarr5/atletai/releases/latest) · [Sito](https://atletaii.netlify.app) · [Privacy](https://atletaii.netlify.app/privacy.html) · [Novità](https://github.com/davimarr5/atletai/releases)
 
 </div>
 
@@ -72,7 +72,7 @@ Aggiornamenti via **EAS Update**: le correzioni che non toccano il codice nativo
 
 ## Le versioni
 
-Ogni rilascio ha le sue note, scritte in italiano e per intero: **[github.com/DaviBlade05/atletai/releases](https://github.com/davimarr5/atletai/releases)**
+Ogni rilascio ha le sue note, scritte in italiano e per intero: **[github.com/davimarr5/atletai/releases](https://github.com/davimarr5/atletai/releases)**
 
 L'ultima è la **[1.8.0](https://github.com/davimarr5/atletai/releases/latest)**, e non contiene una sola funzione nuova. Una revisione del codice aveva trovato cinque strade per cui l'app poteva cancellare o perdere allenamenti *senza dirlo* — tutte raggiungibili parlando normalmente all'assistente o allenandosi in modo ordinario. Quella versione le chiude, e chiude anche la classe di difetti che le rendeva invisibili: il codice che dichiarava riuscito ciò che era fallito.
 
